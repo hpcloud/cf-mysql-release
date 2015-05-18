@@ -1,0 +1,15 @@
+set -ex
+
+PREFIX=${BOSH_INSTALL_TARGET}
+VERSION=1.14.1
+
+export PATH=$PATH:/var/vcap/packages/autoconf/bin
+
+tar xzf automake/automake-${VERSION}.tar.gz
+(
+  set -e
+  cd automake-${VERSION}
+  ./configure --prefix=$PREFIX
+  make
+  make install prefix=$PREFIX
+)

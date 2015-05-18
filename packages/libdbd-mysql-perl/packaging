@@ -1,0 +1,15 @@
+set -ex
+
+VERSION=4.025
+PREFIX=${BOSH_INSTALL_TARGET}
+
+export PATH=$PATH:/var/vcap/packages/mariadb/bin
+
+tar xzf libdbd-mysql-perl/libdbd-mysql-perl_${VERSION}.orig.tar.gz
+(
+  set -e
+  cd DBD-mysql-${VERSION}
+  perl -I/var/vcap/packages/libdbi-perl/lib/perl/5.18.2/ Makefile.PL PREFIX=$PREFIX
+  make
+  make install prefix=$PREFIX
+)

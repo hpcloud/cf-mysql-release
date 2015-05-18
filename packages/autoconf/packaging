@@ -1,0 +1,13 @@
+set -ex
+
+PREFIX=${BOSH_INSTALL_TARGET}
+VERSION=2.65
+
+tar xzf autoconf/autoconf-${VERSION}.tar.gz
+(
+  set -e
+  cd autoconf-${VERSION}
+  autoconf_dir=$PREFIX/share/autoconf ./configure --prefix=$PREFIX
+  make
+  make install prefix=$PREFIX
+)

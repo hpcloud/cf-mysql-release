@@ -31,34 +31,10 @@ python/Python-2.7.8.tgz:
   object_id: f9c52077-dfa2-4f9a-80d4-46e3b22adf51
   sha: 511960dd78451a06c9df76509635aeec05b2051a
   size: 14846119
-xtrabackup/autoconf-2.65.tar.gz:
-  object_id: 12402e0c-14bd-4a31-8344-858c09639f67
-  sha: ae9e1ab046822007f25c88e1d8f2166e065da8c2
-  size: 1738880
-xtrabackup/automake-1.14.1.tar.gz:
-  object_id: 22110fae-0404-48d2-a2a0-869b40172c09
-  sha: 0bb1714b78d70cab9907d2013082978a28f48a46
-  size: 2240681
 xtrabackup/libaio_0.3.110.orig.tar.gz:
   object_id: 10d3be70-6c51-4220-9d46-8de75281fd3d
   sha: f8f6ed15f22e528f6f415939b07854539e3360e4
   size: 42270
-xtrabackup/libdbd-mysql-perl_4.025.orig.tar.gz:
-  object_id: 4013014b-5261-4fea-915f-d7f08c3b3733
-  sha: 7c148d347988785239973835f8b5a8b78677ae47
-  size: 135538
-xtrabackup/libdbi-perl_1.630.orig.tar.gz:
-  object_id: 2c9e9439-ef0d-400e-a79c-d608c04ef8c3
-  sha: 8e8ca6484a3e0c7f4e268e46101faed576e072fc
-  size: 588554
-xtrabackup/libtool-2.4.2.tar.gz:
-  object_id: 958f3335-2373-4c4f-9db1-7391a9a7e6f2
-  sha: 22b71a8b5ce3ad86e1094e7285981cae10e6ff88
-  size: 2632347
-xtrabackup/socat-1.7.2.4.tar.gz:
-  object_id: cd877813-c9ac-4596-b4e4-d361fe5bbdb6
-  sha: c33904b83295accef2aaff8adf7eedd3310f9777
-  size: 583762
 ruby/ruby-2.1.4.tar.gz:
   object_id: 487424bc-4b2f-4474-8eb3-dfe8c62f57f2
   sha: 29e9cfdd9e989b7621d7696ef3f970262a08dbc3
@@ -91,3 +67,27 @@ mysqlclient/mariadb-connector-c-2.1.0-src.tar.gz:
   object_id: e1e0446a-8cbd-4b8e-b496-fc20f530fd7c
   sha: 2fea886fd8ddf3e17d6228d282828afeaee0a317
   size: 1912888
+socat/socat-1.7.2.4.tar.gz:
+  object_id: 19143ade-91d2-499b-806f-6dc4839a921d
+  sha: c33904b83295accef2aaff8adf7eedd3310f9777
+  size: 583762
+libdbi-perl/libdbi-perl_1.630.orig.tar.gz:
+  object_id: 921a9f3a-1411-4ddc-9cd8-85250ce436b6
+  sha: 8e8ca6484a3e0c7f4e268e46101faed576e072fc
+  size: 588554
+libdbd-mysql-perl/libdbd-mysql-perl_4.025.orig.tar.gz:
+  object_id: 8588e919-d536-4e99-aaac-c2061543d91a
+  sha: 7c148d347988785239973835f8b5a8b78677ae47
+  size: 135538
+autoconf/autoconf-2.65.tar.gz:
+  object_id: 7320c91a-9542-4d43-90a5-e01207c3a16d
+  sha: ae9e1ab046822007f25c88e1d8f2166e065da8c2
+  size: 1738880
+automake/automake-1.14.1.tar.gz:
+  object_id: 6589a9d0-ea9c-4c68-9cbd-b07d4b3b806a
+  sha: 0bb1714b78d70cab9907d2013082978a28f48a46
+  size: 2240681
+libtool/libtool-2.4.2.tar.gz:
+  object_id: 5c7d6019-5377-450a-9772-316fbd10ec4a
+  sha: 22b71a8b5ce3ad86e1094e7285981cae10e6ff88
+  size: 2632347

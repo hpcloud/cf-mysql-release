@@ -2,7 +2,13 @@
 name: xtrabackup
 
 dependencies:
-  - mariadb
+- mariadb
+- socat
+- libdbi-perl
+- libdbd-mysql-perl
+- autoconf
+- automake
+- libtool
 
 files:
-  - xtrabackup/**/*
+- xtrabackup/**/*

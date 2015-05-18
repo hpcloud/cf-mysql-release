@@ -1,0 +1,9 @@
+---
+name: automake
+
+dependencies:
+- autoconf
+
+files:
+- automake/**/*
+

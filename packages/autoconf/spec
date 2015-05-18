@@ -1,0 +1,6 @@
+---
+name: autoconf
+
+files:
+- autoconf/**/*
+

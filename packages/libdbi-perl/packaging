@@ -1,0 +1,13 @@
+set -ex
+
+PREFIX=${BOSH_INSTALL_TARGET}
+VERSION=1.630
+
+tar xzf libdbi-perl/libdbi-perl_${VERSION}.orig.tar.gz
+(
+  set -e
+  cd DBI-${VERSION}
+  perl Makefile.PL PREFIX=$PREFIX
+  make
+  make install prefix=$PREFIX
+)

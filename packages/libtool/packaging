@@ -1,0 +1,14 @@
+set -ex
+
+PREFIX=${BOSH_INSTALL_TARGET}
+VERSION=2.4.2
+
+tar xzf libtool/libtool-${VERSION}.tar.gz
+(
+  set -e
+  cd libtool-${VERSION}
+  ./configure --prefix=$PREFIX
+  make
+  make install prefix=$PREFIX
+)
+

@@ -1,0 +1,13 @@
+set -ex
+
+PREFIX=${BOSH_INSTALL_TARGET}
+VERSION=1.7.2.4
+
+tar xzf socat/socat-${VERSION}.tar.gz
+(
+  set -e
+  cd socat-${VERSION}
+  ./configure --prefix=$PREFIX
+  make
+  make install prefix=$PREFIX
+)

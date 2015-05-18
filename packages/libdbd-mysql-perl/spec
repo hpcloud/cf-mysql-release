@@ -1,0 +1,9 @@
+---
+name: libdbd-mysql-perl
+
+dependencies:
+- libdbi-perl
+- mariadb
+
+files:
+- libdbd-mysql-perl/**/*

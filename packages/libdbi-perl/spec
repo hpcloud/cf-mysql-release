@@ -1,0 +1,8 @@
+---
+name: libdbi-perl
+
+dependencies:
+- mariadb
+
+files:
+- libdbi-perl/**/*
