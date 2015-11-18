@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+set -eux
+
+cp -a * ${BOSH_INSTALL_TARGET}
+
+(
+  cd ${BOSH_INSTALL_TARGET}/route_registrar
+
+  export PATH=/var/vcap/packages/ruby/bin:$PATH;
+  chmod +x bin/route-registrar
+  /var/vcap/packages/ruby/bin/bundle install --local --deployment
+)

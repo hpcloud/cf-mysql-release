@@ -10,10 +10,11 @@ templates:
 
 packages:
 - switchboard
+- ruby
 - golang
 - common
 - syslog_aggregator
-- route-registrar
+- route_registrar
 
 properties:
   proxy.port:
@@ -64,3 +65,8 @@ properties:
   standalone:
     description: "Standalone Mode: Are you deploying MySQL without a CloudFoundry deployment?"
     default: false
+  route_registrar.update_frequency_in_seconds:
+    default: 20
+    description: "The delay in seconds between routing updates"
+  route_registrar.routes:
+    description: "Set of routes to be registered"

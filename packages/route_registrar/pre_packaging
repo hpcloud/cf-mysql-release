@@ -1,0 +1,8 @@
+set -eux
+
+pushd ${BUILD_DIR}/route_registrar
+  rm -rf ./vendor/*
+  BUNDLE_WITHOUT=development:test bundle package --all --no-install --path ./vendor/cache
+  rm -rf ./vendor/cache/ruby
+  bundle config --delete NO_INSTALL
+popd

@@ -6,27 +6,31 @@ JOB_NAME=route-registrar
 
 RUN_DIR=/var/vcap/sys/run/route-registrar
 LOG_DIR=/var/vcap/sys/log/route-registrar
-
+PACKAGE_DIR=/var/vcap/packages/route_registrar/route_registrar
 PIDFILE=$RUN_DIR/route-registrar.pid
 CONFIG_FILE=/var/vcap/jobs/proxy/config/route-registrar.yml
 
 source /var/vcap/packages/common/utils.sh
 
 export HOME=/var/vcap
+export PATH=/var/vcap/packages/ruby/bin:$PATH
 
 case $1 in
 
 start)
-
+  pid_guard $PIDFILE $JOB_NAME
   mkdir -p $RUN_DIR
   mkdir -p $LOG_DIR
 
-  pid_guard $PIDFILE $JOB_NAME
+  chown -R vcap:vcap $RUN_DIR
+  chown -R vcap:vcap $LOG_DIR
 
-  /var/vcap/packages/route-registrar/bin/route-registrar \
-  -pidfile=$PIDFILE \
-  -configPath=$CONFIG_FILE \
-  >>$LOG_DIR/route-registrar.stdout.log 2>>$LOG_DIR/route-registrar.stderr.log&
+  echo $$ > $PIDFILE
+
+  pushd ${PACKAGE_DIR}
+    exec chpst -u vcap:vcap /var/vcap/packages/ruby/bin/bundle exec   ./bin/route-registrar ${CONFIG_FILE} \
+    >>$LOG_DIR/route-registrar.stdout.log 2>>$LOG_DIR/route-registrar.stderr.log
+  popd
 ;;
 
 stop)

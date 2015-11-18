@@ -10,8 +10,8 @@ templates:
   quota_enforcer_config.yml.erb: bin/quota_enforcer_config.yml
   syslog_forwarder.conf.erb: config/syslog_forwarder.conf
   healthcheck.sh.erb: bin/healthcheck.sh
-  registrar_settings.yml.erb: config/registrar_settings.yml
   route-registrar_ctl.erb: bin/route-registrar_ctl
+  route-registrar.yml.erb: config/route-registrar.yml
 
 packages:
 - ruby
@@ -20,8 +20,8 @@ packages:
 - common
 - mariadb
 - syslog_aggregator
-- route-registrar
 - quota-enforcer
+- route_registrar
 
 properties:
   auth_username:
@@ -96,3 +96,8 @@ properties:
   syslog_aggregator.transport:
     description: "Transport to be used when forwarding logs (tcp|udp|relp)."
     default: "tcp"
+  route_registrar.update_frequency_in_seconds:
+    default: 20
+    description: "The delay in seconds between routing updates"
+  route_registrar.routes:
+    description: "Set of routes to be registered"

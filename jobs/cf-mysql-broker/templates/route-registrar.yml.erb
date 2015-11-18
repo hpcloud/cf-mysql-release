@@ -14,6 +14,10 @@
   end
 %>
 
+health_checker:
+  name: script
+  healthcheck_script_path: /var/vcap/jobs/cf-mysql-broker/bin/healthcheck.sh
+
 message_bus_servers:
 <% p("nats.machines").each do |address| %>
   - nats://<%= p("nats.user") %>:<%= p("nats.password") %>@<%= address %>:<%= p("nats.port") %>
@@ -22,11 +26,8 @@ message_bus_servers:
 host: <%= discover_external_ip %>
 update_frequency_in_seconds: <%= p("route_registrar.update_frequency_in_seconds") %>
 
-<% my_ip = spec.networks.send(p('network_name')).ip %>
-<% proxy_index = p('proxy.proxy_ips').index(my_ip) %>
-
-
 port_map:
-  - port: <%= p('proxy.api_port') %>
+  - port: 80
     uris:
-    - proxy-<%= proxy_index %>-<%= p('external_host') %>
+    - <%= p('external_host') %>
+    - <%= spec.networks.send(p('network_name')).ip %>
