@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -eux
+
+LOG_DIR=/var/vcap/sys/log/mysql
+LOG_FILE=$LOG_DIR/mariadb_ctrl.combined.log
+
+echo "Starting pre-start..." >> ${LOG_FILE}
+sleep 300
+echo "Finished pre-start" >> ${LOG_FILE}
+
+exit 0
