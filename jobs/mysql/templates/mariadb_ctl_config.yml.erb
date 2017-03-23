@@ -59,4 +59,4 @@ Manager:
   - <%= ip %>
   <% end %>
   MyIP: <%= network_ip %>
-  ConnectionTimeout: 600
+  ConnectionTimeout: <%= p('cf_mysql.mysql.database_startup_timeout')%>
